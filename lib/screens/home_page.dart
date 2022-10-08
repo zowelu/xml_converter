@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: const [
-          CardWithLabel('Title', [TextField()]),
+          CardWithLabel('Title1', [TextField()]),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
