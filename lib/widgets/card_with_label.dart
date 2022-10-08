@@ -15,18 +15,21 @@ class CardWithLabel extends StatelessWidget {
     return SizedBox(
       width: 300,
       height: 200,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            _label,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-            textAlign: TextAlign.start,
-          ),
-          Column(
-            children: _children,
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              _label,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.start,
+            ),
+            Column(
+              children: _children,
+            ),
+          ],
+        ),
       ),
     );
   }
