@@ -2,26 +2,48 @@ import 'package:flutter/material.dart';
 
 import '../widgets/card_with_label.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+class HomePage extends StatelessWidget {
+  HomePage({Key? key}) : super(key: key);
 
-  final String title;
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  String? _title;
+  String? _description;
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('XML converter')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          CardWithLabel('Title1', [TextField()]),
+        children: [
+          CardWithLabel(
+            'Title',
+            [
+              TextField(
+                controller: _titleController,
+                onChanged: (newValue) => _title = newValue,
+                minLines: 1,
+                maxLines: 5,
+                decoration: const InputDecoration(hintText: 'Input title...'),
+              ),
+            ],
+          ),
+          CardWithLabel(
+            'Description',
+            [
+              TextField(
+                controller: _descriptionController,
+                onChanged: (newValue) => _description = newValue,
+                minLines: 1,
+                maxLines: 20,
+                decoration:
+                    const InputDecoration(hintText: 'Input description...'),
+              ),
+            ],
+          ),
         ],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
