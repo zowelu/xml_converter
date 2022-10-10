@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
+import 'package:xml_converter/widgets/drop_area_widget.dart';
 
 import '../widgets/card_with_label.dart';
 
@@ -7,13 +9,17 @@ class HomePage extends StatelessWidget {
 
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
+  final Logger _log = Logger('HomePage');
+
   String? _title;
   String? _description;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('XML converter')),
+      appBar: AppBar(
+        title: const Text('XML converter'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -42,6 +48,11 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
+          Stack(
+            children: [
+              DropAreaWidget(),
+            ],
+          )
         ],
       ),
     );
