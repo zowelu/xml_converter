@@ -14,7 +14,7 @@ class CardWithLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 300,
-      height: 200,
+      height: 150,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
