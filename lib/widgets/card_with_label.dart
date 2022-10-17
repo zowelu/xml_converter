@@ -12,13 +12,30 @@ class CardWithLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10.0),
+        ),
+        color: Colors.black12,
+        border: Border.all(
+          color: Colors.black12,
+          width: 2.0,
+        ),
+        boxShadow: const [
+          BoxShadow(
+              color: Colors.black45,
+              blurRadius: 10,
+              blurStyle: BlurStyle.outer),
+        ],
+      ),
       width: 300,
-      height: 150,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
               _label,
